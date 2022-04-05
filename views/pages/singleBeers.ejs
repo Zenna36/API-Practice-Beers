@@ -1,0 +1,24 @@
+<%- include('../partials/header'); %>
+
+    <main class="main container">
+        <div class="row">
+            <h2 class="col-12"><%= name %></h2>
+            <section class="section row">
+                <figure class="figure col-10">
+                    <figcaption><%= data.name %></figcaption>
+                    <hr>
+                    <img src="<%= data.image %>" alt="<%= data.name %>" class="img-fluid">
+                    <figcaption><%= data.price %></figcaption>
+                    <hr>
+                </figure>
+                <ul>
+                    <h2>Ratings:</h2>
+                    <% for (let i =0; i < data.rating.length; i++ ) { %>
+                    <li> <%= data.rating[i].average %> <%= data.rating[i].reviews %> </li>
+                <% } %>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+<%- include('../partials/footer'); %>
